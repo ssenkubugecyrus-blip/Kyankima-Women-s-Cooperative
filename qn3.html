@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyankima Women's Cooperative | Empowering Rural Women Entrepreneurs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fef9e6;
+            color: #2c3e2f;
+            line-height: 1.6;
+        }
+
+        /* Navigation - IA Structure: Top-level categories */
+        nav {
+           background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f4c542;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f4c542;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section - Home Page Content Item 1 */
+        .hero {
+          background: #00bf8f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Mission Statement - Home Page Content Item 2 */
+        .mission {
+            background-color: #cce8e1;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .mission h2 {
+            color: #3b686b;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Products Grid - Product Catalog IA */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            background-color: #dddddd;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: #3b5a6b;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3b656b;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #4b8a8b;
+        }
+
+        /* Members Section - Community Hub IA */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .member-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Form - Contact IA */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e2f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Page visibility management - Single Page App behavior */
+        .page {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="#" class="logo" onclick="showPage('home'); return false;">Kyankima<span> Women</span></a>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+            <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+            <li><a href="#" onclick="showPage('products'); return false;">Products</a></li>
+            <li><a href="#" onclick="showPage('shop'); return false;">Shop</a></li>
+            <li><a href="#" onclick="showPage('members'); return false;">Members</a></li>
+            <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page active-page">
+        <div class="hero">
+            <h1>Empowering Rural Women Through Enterprise</h1>
+            <p>Handcrafted with love from Kyankima Village, Uganda</p>
+        </div>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>To economically empower 500+ women in Kyankima sub-county through sustainable agriculture, fair-trade crafts, and cooperative entrepreneurship.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">☕</div>
+                <div class="product-info">
+                    <div class="product-title">Organic Arabica Coffee</div>
+                    <div class="product-price">UGX 25,000 / kg</div>
+                    <button class="btn" onclick="showPage('shop')">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🧺</div>
+                <div class="product-info">
+                    <div class="product-title">Handwoven Baskets</div>
+                    <div class="product-price">UGX 45,000</div>
+                    <button class="btn" onclick="showPage('shop')">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🧴</div>
+                <div class="product-info">
+                    <div class="product-title">Shea Butter</div>
+                    <div class="product-price">UGX 15,000 / 200g</div>
+                    <button class="btn" onclick="showPage('shop')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE - Content Inventory: Cooperative history, leadership -->
+    <div id="about-page" class="page">
+        <h1>About Kyankima Women's Cooperative</h1>
+        <p>Established in 2012 with 15 founding members, we have grown to 248 active women farmers and artisans.</p>
+        <h2>Leadership Team</h2>
+        <ul>
+            <li><strong>Grace Nambi</strong> - Chairperson (15 years export experience)</li>
+            <li><strong>Martha Akello</strong> - Treasurer (Microfinance specialist)</li>
+            <li><strong>Rebecca Kyomugisha</strong> - Production Manager (20+ years farming)</li>
+        </ul>
+        <h2>Our Values</h2>
+        <p>✅ Fair wages • ✅ Organic practices • ✅ Community reinvestment • ✅ Gender equality</p>
+    </div>
+
+    <!-- PRODUCTS PAGE -->
+    <div id="products-page" class="page">
+        <h1>Our Products</h1>
+        <div class="products-grid">
+            <div class="product-card"><div class="product-image">☕</div><div class="product-info"><div class="product-title">Coffee Beans</div><div class="product-price">UGX 25,000/kg</div></div></div>
+            <div class="product-card"><div class="product-image">🧺</div><div class="product-info"><div class="product-title">Baskets</div><div class="product-price">UGX 45,000</div></div></div>
+            <div class="product-card"><div class="product-image">🧴</div><div class="product-info"><div class="product-title">Shea Butter</div><div class="product-price">UGX 15,000</div></div></div>
+            <div class="product-card"><div class="product-image">🧣</div><div class="product-info"><div class="product-title">Handwoven Scarves</div><div class="product-price">UGX 30,000</div></div></div>
+        </div>
+    </div>
+
+    <!-- SHOP PAGE - Cart simulation -->
+    <div id="shop-page" class="page">
+        <h1>Shopping Cart</h1>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: UGX 0</p>
+        <button class="btn" onclick="checkout()">Checkout (Demo)</button>
+        <p style="margin-top: 1rem;">✅ Cash on delivery • ✅ Mobile Money (MTN/Airtel)</p>
+    </div>
+
+    <!-- MEMBERS PAGE -->
+    <div id="members-page" class="page">
+        <h1>Member Spotlight</h1>
+        <div class="members-grid">
+            <div class="member-card"><h3>Jesca Auma</h3><p>Joined 2015 • Coffee farmer • Income +340%</p></div>
+            <div class="member-card"><h3>Fatuma Nantume</h3><p>Master weaver • Trains 50+ youth</p></div>
+            <div class="member-card"><h3>Sarah Babirye</h3><p>Secretary • Digital literacy advocate</p></div>
+        </div>
+        <div class="mission" style="margin-top: 2rem;">
+            <h2>Become a Member</h2>
+            <p>Membership fee: UGX 10,000 one-time. Benefits: Training, savings group, market access.</p>
+            <button class="btn" onclick="alert('Application form would open here')">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form onsubmit="alert('Message sent (demo). Real implementation would use email API'); return false;">
+                <div class="form-group"><label>Name</label><input type="text" required></div>
+                <div class="form-group"><label>Email</label><input type="email" required></div>
+                <div class="form-group"><label>Message</label><textarea rows="4" required></textarea></div>
+                <button type="submit" class="btn">Send</button>
+            </form>
+            <p style="margin-top: 1rem;">📍 Kyankima Trading Centre, Namutumba District, Uganda<br>📞 +256 782 123 456<br>💬 WhatsApp: +256 701 234 567<br>✉️ info@kyankimawomen.co.ug</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Kyankima Women's Cooperative — Empowering Rural Uganda</p>
+</footer>
+
+<script>
+    // Show/hide pages based on navigation
+    function showPage(pageId) {
+        // Hide all pages
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active-page');
+        });
+        // Show selected page
+        const targetPage = document.getElementById(`${pageId}-page`);
+        if (targetPage) {
+            targetPage.classList.add('active-page');
+        }
+        // Update browser URL without reload
+        history.pushState(null, '', `#${pageId}`);
+    }
+
+    // Cart functionality (simplified for demo)
+    let cart = [];
+    function addToCart(product, price) {
+        cart.push({ product, price });
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        const cartDiv = document.getElementById('cart-items');
+        if(cartDiv) {
+            if(cart.length === 0) {
+                cartDiv.innerHTML = '<p>Cart is empty. Browse products to add items.</p>';
+                document.getElementById('cart-total').innerText = 'Total: UGX 0';
+                return;
+            }
+            let html = '<ul>';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                html += `<li>${item.product} - UGX ${item.price} <button onclick="removeFromCart(${idx})">Remove</button></li>`;
+                total += item.price;
+            });
+            html += '</ul>';
+            cartDiv.innerHTML = html;
+            document.getElementById('cart-total').innerText = `Total: UGX ${total}`;
+        }
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+    }
+
+    function checkout() {
+        if(cart.length === 0) {
+            alert('Your cart is empty. Add products first.');
+        } else {
+            alert(`Order placed! Total UGX ${cart.reduce((sum,i)=>sum+i.price,0)}\nDelivery within 3-5 days.`);
+            cart = [];
+            updateCartDisplay();
+        }
+    }
+
+    // Expose addToCart to global scope from product buttons
+    window.addToCart = addToCart;
+    window.removeFromCart = removeFromCart;
+    window.checkout = checkout;
+
+    // Initial page load based on URL hash
+    window.addEventListener('load', () => {
+        const hash = window.location.hash.substring(1);
+        if(hash && ['home','about','products','shop','members','contact'].includes(hash)) {
+            showPage(hash);
+        } else {
+            showPage('home');
+        }
+    });
+</script>
+
+<!-- Add product buttons to home page products -->
+<script>
+    // Attach add-to-cart to home page product buttons after load
+    (function() {
+        setTimeout(() => {
+            const homeProducts = document.querySelectorAll('#home-page .product-card .btn');
+            if(homeProducts.length) {
+                const products = [
+                    { name: 'Organic Arabica Coffee', price: 25000 },
+                    { name: 'Handwoven Basket', price: 45000 },
+                    { name: 'Shea Butter 200g', price: 15000 }
+                ];
+                homeProducts.forEach((btn, idx) => {
+                    if(idx < products.length) {
+                        btn.onclick = (e) => {
+                            e.stopPropagation();
+                            addToCart(products[idx].name, products[idx].price);
+                            alert(`${products[idx].name} added to cart!`);
+                        };
+                    }
+                });
+            }
+        }, 100);
+    })();
+</script>
+
+</body>
+</html>
